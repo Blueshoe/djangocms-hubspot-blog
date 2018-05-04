@@ -50,5 +50,5 @@ setup(
     classifiers=CLASSIFIERS,
     install_requires=REQUIREMENTS,
     keywords=['django', 'Django CMS', 'hubspot', 'hubspot blog', 'blog', 'CMS', 'Blueshoe'],
-    # zip_safe=False,
+    zip_safe=False,
 )

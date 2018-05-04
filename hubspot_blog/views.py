@@ -6,7 +6,7 @@ class HubspotPostsList(ListView):
     model = HubspotBlogPost
     paginate_by = 10
     context_object_name = 'posts'
-    template_name = 'hubspot_blog/posts_list.html'
+    template_name = 'hubspot_blog/post_list.html'
 
 
 class HubspotPostDetail(DetailView):
