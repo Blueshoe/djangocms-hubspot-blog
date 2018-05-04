@@ -1,0 +1,6 @@
+include LICENSE.txt
+include README.rst
+# recursive-include hubspot_blog/locale *
+# recursive-include hubspot_blog/statics *
+recursive-include hubspot_blog/templates *
+recursive-include hubspot_blog/migrations *

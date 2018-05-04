@@ -9,4 +9,4 @@ class HubspotBlogApphook(CMSApp):
     name = 'HubspotBlog'
 
     def get_urls(self, page=None, language=None, **kwargs):
-        return ['samberger.hubspot_blog.urls']
+        return ['hubspot_blog.urls']

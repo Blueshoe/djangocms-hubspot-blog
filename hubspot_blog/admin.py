@@ -1,8 +1,8 @@
 from django.contrib import admin
 
 # Register your models here.
-from samberger.hubspot_blog import hubspot_api
-from samberger.hubspot_blog.models import HubspotBlogPost, HubspotBlogAuthor, HubspotBlogTopic
+from hubspot_blog import hubspot_api
+from hubspot_blog.models import HubspotBlogPost, HubspotBlogAuthor, HubspotBlogTopic
 
 
 def import_hubspot_posts_action(modeladmin, request, queryset):

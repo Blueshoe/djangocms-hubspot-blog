@@ -8,7 +8,7 @@ import requests
 from django.conf import settings
 from requests import HTTPError
 
-from samberger.hubspot_blog.models import HubspotBlogPost, HubspotBlogTopic, HubspotBlogAuthor
+from hubspot_blog.models import HubspotBlogPost, HubspotBlogTopic, HubspotBlogAuthor
 
 API_BASE_URL = 'https://api.hubapi.com'
 API_KEY = settings.HUBSPOT_API_KEY

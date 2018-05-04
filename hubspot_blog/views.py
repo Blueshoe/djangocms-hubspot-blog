@@ -1,5 +1,5 @@
 from django.views.generic import ListView, DetailView
-from samberger.hubspot_blog.models import HubspotBlogPost
+from hubspot_blog.models import HubspotBlogPost
 
 
 class HubspotPostsList(ListView):
