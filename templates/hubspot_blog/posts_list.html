@@ -1,0 +1,25 @@
+{% extends 'container.html' %}
+
+{% block container %}
+    {% for post in posts %}
+        <div style="margin-top: 80px;">
+            <a href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}"><h2>{{ post.title }}</h2></a>
+            {% if post.author %}<p>by <strong>{{ post.author }}</strong></p>{% endif %}
+            <p><strong>{{ post.excerpt|safe|default_if_none:'' }}</strong></p>
+            <a class="link--readMore" href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}">Weiterlesen</a>
+        </div>
+    {% endfor %}
+
+    {% if is_paginated %}
+        <ul class="pager">
+            {% if page_obj.has_previous %}
+                <li><a href="{% url 'hubspot_blog:hubspot-posts-list' %}?page={{ page_obj.previous_page_number }}">&larr;
+                    Previous</a></li>
+            {% endif %}
+            {% if page_obj.has_next %}
+                <li><a href="{% url 'hubspot_blog:hubspot-posts-list' %}?page={{ page_obj.next_page_number }}">Next
+                    &rarr;</a></li>
+            {% endif %}
+        </ul>
+    {% endif %}
+{% endblock %}
