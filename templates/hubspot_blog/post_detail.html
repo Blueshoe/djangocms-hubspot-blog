@@ -1,8 +1,5 @@
-{% extends 'container.html' %}
 {% load cms_tags %}
 
-{% block container %}
-    {% render_model_block post %}
-        {{ post.content_html|safe|default_if_none:'' }}
-    {% endrender_model_block %}
-{% endblock %}
+{% render_model_block post %}
+    {{ post.content_html|safe|default_if_none:'' }}
+{% endrender_model_block %}
