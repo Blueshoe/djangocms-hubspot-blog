@@ -1,14 +1,16 @@
-{% for post in posts %}
-    <div style="margin-top: 80px;">
-        <a href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}"><h2>{{ post.title }}</h2></a>
-        {% if post.author %}<p>by <strong>{{ post.author }}</strong></p>{% endif %}
-        <p><strong>{{ post.excerpt|safe|default_if_none:'' }}</strong></p>
-        <a class="link--readMore" href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}">Read more</a>
-    </div>
-{% endfor %}
+<div class="hubspotBlog-postList">
+    {% for post in posts %}
+        <div class="hubspotBlog-post">
+            <a href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}"><h2>{{ post.title }}</h2></a>
+            {% if post.author %}<p>by <strong>{{ post.author }}</strong></p>{% endif %}
+            <p><strong>{{ post.excerpt|safe|default_if_none:'' }}</strong></p>
+            <a class="hubspotBlog-readMoreLink" href="{% url 'hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}">Read more</a>
+        </div>
+    {% endfor %}
+</div>
 
 {% if is_paginated %}
-    <ul class="pager">
+    <ul class="pager hubspotBlog-pagination">
         {% if page_obj.has_previous %}
             <li><a href="{% url 'hubspot_blog:hubspot-posts-list' %}?page={{ page_obj.previous_page_number }}">&larr;
                 Previous</a></li>
