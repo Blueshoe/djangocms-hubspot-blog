@@ -13,6 +13,7 @@ def read(fname):
 REQUIREMENTS = [
     'django>=1.8,<2.0',
     'django-cms>=3.2',
+    'djangocms-text-ckeditor',
     'requests'
 ]
 
