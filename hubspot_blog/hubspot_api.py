@@ -14,8 +14,13 @@ API_BASE_URL = 'https://api.hubapi.com'
 API_KEY = settings.HUBSPOT_API_KEY
 BLOG_ID = settings.HUBSPOT_BLOG_ID
 PORTAL_ID = settings.HUBSPOT_PORTAL_ID
+try:
+    PAGE_LIMIT = settings.HUBSPOT_BLOG_PAGE_LIMIT
+except AttributeError:
+    PAGE_LIMIT = 10
 
-def get_blog_posts(page=1, limit=settings.HUBSPOT_BLOG_PAGE_LIMIT, as_list=False):
+
+def get_blog_posts(page=1, limit=PAGE_LIMIT, as_list=False):
     path = '/content/api/v2/blog-posts'
     url = '{base}{path}?hapikey={api_key}&content_group_id={blog_id}&order_by=publish_date&limit={limit}offset={offset}&state=PUBLISHED'.format(
         base=API_BASE_URL,
@@ -37,6 +42,7 @@ def get_blog_posts(page=1, limit=settings.HUBSPOT_BLOG_PAGE_LIMIT, as_list=False
         if as_list:
             return r.json().get('objects')
         return r.json()
+
 
 def get_blog_post(id):
     path = '/content/api/v2/blog-posts'

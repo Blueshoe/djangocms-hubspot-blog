@@ -12,7 +12,8 @@ Usage
 ==================================
 
 - ``pip install djangocms-hubspot-blog``     
-- Add the app ``hubspot_blog`` to your ``INSTALLED_APPS``    
+- Add the app ``hubspot_blog`` to your ``INSTALLED_APPS``
+- Add the string settings ``HUBSPOT_API_KEY``, ``HUBSPOT_BLOG_ID``, ``PORTAL_ID`` and optional ``HUBSPOT_BLOG_PAGE_LIMIT``
 - Optionally override the two templates ``hubspot_blog/[post_list.html,post_detail.html]``    
 
 How to fetch blog posts
