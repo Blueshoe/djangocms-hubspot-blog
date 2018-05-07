@@ -1,3 +1,6 @@
+.. image:: https://badge.fury.io/py/djangocms-hubspot-blog.svg
+    :target: https://badge.fury.io/py/djangocms-hubspot-blog
+    
 ==================================
 djangoCMS Hubspot Blog Integration
 ==================================
