@@ -2,14 +2,13 @@ import os
 from setuptools import find_packages, setup
 from hubspot_blog import __version__
 
-with open(os.path.join(os.path.dirname(__file__), 'README.md')) as readme:
-    README = readme.read()
-
 # allow setup.py to be run from any path
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
+
 def read(fname):
     return open(os.path.join(os.path.dirname(__file__), fname)).read()
+
 
 REQUIREMENTS = [
     'django>=1.8,<2.0',
@@ -43,7 +42,7 @@ setup(
     include_package_data=True,
     license=read('LICENSE.txt'),
     description='A djangoCMS App which imports blog posts from the Hubspot Content API',
-    long_description=README,
+    long_description=read('README.rst'),
     author='Maximilian Muth',
     author_email='max@blueshoe.de',
     url='https://github.com/Blueshoe/djangocms-hubspot-blog',
