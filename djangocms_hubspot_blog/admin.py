@@ -1,8 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
-from hubspot_blog import hubspot_api
-from hubspot_blog.models import HubspotBlogPost, HubspotBlogAuthor, HubspotBlogTopic
+from djangocms_hubspot_blog import hubspot_api
+from djangocms_hubspot_blog.models import HubspotBlogPost, HubspotBlogAuthor, HubspotBlogTopic
 
 
 def import_hubspot_posts_action(modeladmin, request, queryset):
@@ -30,4 +29,3 @@ class HubspotBlogPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'date_published', )
     list_filter = ('author', 'date_published', 'topics', )
     actions = (import_hubspot_posts_action, )
-

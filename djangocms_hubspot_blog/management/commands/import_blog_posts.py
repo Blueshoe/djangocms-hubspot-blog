@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 from django.core.management import BaseCommand
 
-from samberger.hubspot_blog import hubspot_api
-from samberger.hubspot_blog.models import HubspotBlogPost
+from djangocms_hubspot_blog import hubspot_api
+from djangocms_hubspot_blog.models import HubspotBlogPost
 
 
 class Command(BaseCommand):

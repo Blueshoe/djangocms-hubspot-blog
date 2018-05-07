@@ -5,4 +5,4 @@ from django.apps import AppConfig
 
 
 class HubspotBlogConfig(AppConfig):
-    name = 'hubspot_blog'
+    name = 'djangocms_hubspot_blog'

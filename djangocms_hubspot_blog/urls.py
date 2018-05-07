@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from django.conf.urls import url
 
-from hubspot_blog.views import HubspotPostsList, HubspotPostDetail
+from djangocms_hubspot_blog.views import HubspotPostsList, HubspotPostDetail
 
 urlpatterns = [
     url(r'^$', HubspotPostsList.as_view(), name='hubspot-posts-list'),

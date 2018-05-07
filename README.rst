@@ -12,17 +12,17 @@ Usage
 ==================================
 
 - ``pip install djangocms-hubspot-blog``     
-- Add the app ``hubspot_blog`` to your ``INSTALLED_APPS``
+- Add the app ``djangocms_hubspot_blog`` to your ``INSTALLED_APPS``
 - Add the string settings ``HUBSPOT_API_KEY``, ``HUBSPOT_BLOG_ID``, ``PORTAL_ID`` and optional ``HUBSPOT_BLOG_PAGE_LIMIT``
-- Optionally override the two templates ``hubspot_blog/[post_list.html,post_detail.html]``    
+- Override the two templates ``djangocms_hubspot_blog/[post_list.html,post_detail.html]``
 
 How to fetch blog posts
 -----------------------
 **Automatically**
 
 The best aproach is to **automatically** fetch posts, authors and topics by
-periodically running the management command ``import_blogposts`` via CRON
-or calling ``hubspot_api.update_blog_posts()`` from a task queue.
+periodically running the management command ``import_blog_posts`` via CRON
+or calling ``djangocms_hubspot_api.update_blog_posts()`` from a task queue.
 
 **Manually**
 
