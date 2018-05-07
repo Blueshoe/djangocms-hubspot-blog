@@ -1,6 +1,6 @@
 import os
 from setuptools import find_packages, setup
-from hubspot_blog import __version__
+from djangocms_hubspot_blog import __version__
 
 # allow setup.py to be run from any path
 # os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
@@ -38,7 +38,7 @@ CLASSIFIERS = [
 setup(
     name='djangocms-hubspot-blog',
     version=__version__,
-    packages=['hubspot_blog'],
+    packages=['djangocms_hubspot_blog'],
     description='A djangoCMS App which imports blog posts from the Hubspot Content API',
     long_description=read('README.rst'),
     license=read('LICENSE.txt'),
