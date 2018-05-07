@@ -3,7 +3,7 @@ from setuptools import find_packages, setup
 from hubspot_blog import __version__
 
 # allow setup.py to be run from any path
-os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
+# os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 
 def read(fname):
@@ -39,15 +39,15 @@ setup(
     name='djangocms-hubspot-blog',
     version=__version__,
     packages=['hubspot_blog'],
-    include_package_data=True,
-    license=read('LICENSE.txt'),
     description='A djangoCMS App which imports blog posts from the Hubspot Content API',
     long_description=read('README.rst'),
+    license=read('LICENSE.txt'),
     author='Maximilian Muth',
     author_email='max@blueshoe.de',
     url='https://github.com/Blueshoe/djangocms-hubspot-blog',
     classifiers=CLASSIFIERS,
     install_requires=REQUIREMENTS,
     keywords=['django', 'Django CMS', 'hubspot', 'hubspot blog', 'blog', 'CMS', 'Blueshoe'],
+    include_package_data=True,
     zip_safe=False,
 )
