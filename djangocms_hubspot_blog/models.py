@@ -48,7 +48,7 @@ class HubspotBlogPost(models.Model):
     author = models.ForeignKey(HubspotBlogAuthor, verbose_name='Autor', blank=True, null=True)
     date_published = models.DateTimeField('Datum', blank=True, null=True)
     featured_image_url = models.URLField('Featured Image', blank=True, null=True)
-    topics = models.ManyToManyField(HubspotBlogTopic, verbose_name='Topics')
+    topics = models.ManyToManyField(HubspotBlogTopic, verbose_name='Topics', blank=True)
 
     class Meta:
         verbose_name = 'Blog Post'
