@@ -59,9 +59,7 @@ or calling ``djangocms_hubspot_api.update_blog_posts()`` from a task queue.
 
 **Manually**
 
-However, it's also possible for site editors to **manually** trigger an
-update via an admin action (it's needed to select a blog post in order
-to run the action, so for the first time use, run the management command or create a dummy blog post via the admin)
+However, it's also possible for site editors to **manually** trigger an update via a button in the admin.
 
 Missing Functionality
 ------------------------- 

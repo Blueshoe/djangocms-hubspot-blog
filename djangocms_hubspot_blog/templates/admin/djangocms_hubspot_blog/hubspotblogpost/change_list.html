@@ -1,0 +1,8 @@
+{% extends "admin/change_list.html" %}
+
+{% block object-tools-items %}
+    {{ block.super }}
+    <li>
+        <a href="{% url "djangocms_hubspot_blog:update-blog-posts" %}" class="grp-state-focus">Blog Posts von Hubspot importieren</a>
+    </li>
+{% endblock %}
