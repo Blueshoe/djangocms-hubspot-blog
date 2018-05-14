@@ -16,11 +16,12 @@ class HubspotBlogPostInline(admin.StackedInline):
 @admin.register(HubspotBlogAuthor)
 class HubspotBlogAuthorAdmin(admin.ModelAdmin):
     inlines = (HubspotBlogPostInline, )
+    change_list_template = 'djangocms_hubspot_blog/admin/post_change_list.html'
 
 
 @admin.register(HubspotBlogTopic)
 class HubspotBlogTopicAdmin(admin.ModelAdmin):
-    pass
+    change_list_template = 'djangocms_hubspot_blog/admin/post_change_list.html'
 
 
 @admin.register(HubspotBlogPost)
@@ -29,3 +30,4 @@ class HubspotBlogPostAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'date_published', )
     list_filter = ('author', 'date_published', 'topics', )
     actions = (import_hubspot_posts_action, )
+    change_list_template = 'djangocms_hubspot_blog/admin/post_change_list.html'
