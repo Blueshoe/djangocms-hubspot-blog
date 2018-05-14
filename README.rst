@@ -34,6 +34,7 @@ Missing Functionality
 -------------------------
 - Author page    
 - Topic page    
+- Localization (Currently it's German only)
 
 Contributing
 ----------------
