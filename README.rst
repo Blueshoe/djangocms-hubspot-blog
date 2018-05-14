@@ -8,13 +8,46 @@ djangoCMS Hubspot Blog Integration
 - Management command to fetch Authors, Topics and Posts and store them in the database    
 - djangoCMS App to hook list and detail view into a page
 
-Usage
+Installation
 ==================================
 
 - ``pip install djangocms-hubspot-blog``     
 - Add the app ``djangocms_hubspot_blog`` to your ``INSTALLED_APPS``
-- Add the string settings ``HUBSPOT_API_KEY``, ``HUBSPOT_BLOG_ID``, ``PORTAL_ID`` and optional ``HUBSPOT_BLOG_PAGE_LIMIT``
-- Override the two templates ``djangocms_hubspot_blog/[post_list.html,post_detail.html]``
+- Add the settings listed below to your settings file
+- Override the templates listed below
+
+Settings
+==================================
+
++-------------------------+----------+---------------+
+| Setting Name            | Required | Default Value |
++=========================+==========+===============+
+| HUBSPOT_API_KEY         | yes      | /             |
++-------------------------+----------+---------------+
+| HUBSPOT_BLOG_ID         | yes      | /             |
++-------------------------+----------+---------------+
+| PORTAL_ID               | yes      | /             |
++-------------------------+----------+---------------+
+| HUBSPOT_BLOG_PAGE_LIMIT | no       | 10            |
++-------------------------+----------+---------------+
+
+Views & Templates
+==================================
+It's recommended to override the given templates. Take a look at the templates on how to do it.
+
++------------------------+---------------------------------------------+--------------------------------------------+
+| View                   | View Name                                   | Template                                   |
++========================+=============================================+============================================+
+| HubspotPostsList       | ``djangocms_hubspot_blog:posts-list``       | ``djangocms_hubspot_blog/post_list.html``  |
++------------------------+---------------------------------------------+--------------------------------------------+
+| HubspotTopicList       | ``djangocms_hubspot_blog:topic-list``       | ``djangocms_hubspot_blog/post_list.html``  |
++------------------------+---------------------------------------------+--------------------------------------------+
+| HubspotAuthorPostsList |``djangocms_hubspot_blog:author-posts-list`` | ``djangocms_hubspot_blog/post_list.html``  |
++------------------------+---------------------------------------------+--------------------------------------------+
+| HubspotPostDetail      | ``djangocms_hubspot_blog:post-detail``      | ``djangocms_hubspot_blog/post_detail.html``|
++------------------------+---------------------------------------------+--------------------------------------------+
+
+The pagination has an additional partial template at ``djangocms_hubspot_blog/partials/pagination.html``
 
 How to fetch blog posts
 -----------------------
@@ -31,9 +64,7 @@ update via an admin action (it's needed to select a blog post in order
 to run the action, so for the first time use, run the management command or create a dummy blog post via the admin)
 
 Missing Functionality
--------------------------
-- Author page    
-- Topic page    
+------------------------- 
 - Localization (Currently it's German only)
 
 Contributing
