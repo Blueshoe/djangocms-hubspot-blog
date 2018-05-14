@@ -1,3 +1,4 @@
+from django.core.urlresolvers import reverse_lazy, reverse
 from django.db import models
 from djangocms_text_ckeditor.fields import HTMLField
 
@@ -22,6 +23,9 @@ class HubspotBlogAuthor(models.Model):
     def __str__(self):
         return self.full_name
 
+    def get_absolute_url(self):
+        return reverse_lazy('djangocms_hubspot_blog:author-posts-list', kwargs={'author_slug': self.slug})
+
 
 class HubspotBlogTopic(models.Model):
     id = models.CharField('ID', max_length=50, primary_key=True, blank=False, null=False)
@@ -36,6 +40,9 @@ class HubspotBlogTopic(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse_lazy('djangocms_hubspot_blog:topics-list', kwargs={'topic_slug': self.slug})
 
 
 class HubspotBlogPost(models.Model):
@@ -57,3 +64,6 @@ class HubspotBlogPost(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self):
+        return reverse_lazy('djangocms_hubspot_blog:post-detail', kwargs={'pk': self.pk, 'slug': self.slug})

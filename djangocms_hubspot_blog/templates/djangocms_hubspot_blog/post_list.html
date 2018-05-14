@@ -1,23 +1,20 @@
-<div class="hubspotBlog-postList">
-    {% for post in posts %}
-        <div class="hubspotBlog-post">
-            <a href="{% url 'djangocms_hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}"><h2>{{ post.title }}</h2></a>
-            {% if post.author %}<p>by <strong>{{ post.author }}</strong></p>{% endif %}
-            <p><strong>{{ post.excerpt|safe|default_if_none:'' }}</strong></p>
-            <a class="hubspotBlog-readMoreLink" href="{% url 'djangocms_hubspot_blog:hubspot-post' pk=post.pk slug=post.slug %}">Read more</a>
-        </div>
-    {% endfor %}
-</div>
+{% extends "base.html" %}
 
-{% if is_paginated %}
-    <ul class="pager hubspotBlog-pagination">
-        {% if page_obj.has_previous %}
-            <li><a href="{% url 'djangocms_hubspot_blog:hubspot-posts-list' %}?page={{ page_obj.previous_page_number }}">&larr;
-                Previous</a></li>
-        {% endif %}
-        {% if page_obj.has_next %}
-            <li><a href="{% url 'djangocms_hubspot_blog:hubspot-posts-list' %}?page={{ page_obj.next_page_number }}">Next
-                &rarr;</a></li>
-        {% endif %}
-    </ul>
-{% endif %}
+{% block content %}
+    <div class="hubspotBlog-postList">
+        {% for post in posts %}
+            <div class="hubspotBlog-post">
+                <a href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a>
+                {% if post.author %}
+                    <p>by <a href="{{ post.author.get_absolute_url }}"><strong>{{ post.author }}</strong></a></p>
+                {% endif %}
+                <p><strong>{{ post.excerpt|safe|default_if_none:'' }}</strong></p>
+                <a class="hubspotBlog-readMoreLink" href="{{ post.get_absolute_url }}">Read more</a>
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if is_paginated %}
+        {% include "djangocms_hubspot_blog/partials/pagination.html" %}
+    {% endif %}
+{% endblock %}
